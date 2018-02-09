@@ -1,0 +1,57 @@
+# ./docker-compose.yml
+version: '3.0'
+services:
+  mysql_loans:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: J@re)
+      MYSQL_USER: root
+      MYSQL_PASSWORD: 1234
+      MYSQL_DATABASE: loans
+    ports:
+      - "3306:3306"
+    volumes:
+      - my-datavolume:/var/lib/mysql
+    container_name: loans_mysql
+  loans:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+    depends_on:
+      - mysql_loans
+    container_name: loans_python
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      - PMA_ARBITRARY=1
+    restart: always
+    ports:
+      - 8082:80
+    container_name: loans_phpmyadmin
+    volumes:
+      - /sessions
+    depends_on:
+      - mysql_loans
+#  dev_env:
+#    image: hbirkdale/python_dev_env
+#    environment:
+#      #DISPLAY: 10.61.246.245:0
+#      DISPLAY: 10.255.28.233:0
+#    container_name: Pycharm1
+#    depends_on:
+#      - lotto
+#    volumes:
+#      - /tmp/.X11-unix:/tmp/.X11-unix
+#      - /private/tmp/com.apple.launchd.pSRoluUcKy:/private/tmp/com.apple.launchd.pSRoluUcKy
+#     - ${HOME}/.Xauthority:/home/developer/.Xauthority
+#      - ~/.PyCharm:/home/developer/.PyCharm
+#      - ~/.PyCharm.java:/home/developer/.java
+#      - ~/.PyCharm.py2:/usr/local/lib/python2.7
+#      - ~/.PyCharm.py3:/usr/local/lib/python3.4
+#      - ~/Development/Python/:/home/developer
+volumes:
+  my-datavolume:
+    driver: local
