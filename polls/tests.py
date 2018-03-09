@@ -13,6 +13,9 @@ def create_question(question_text,days):
 
 
 class QuestionModelTests(TestCase):
+	#def test_date(self):
+	#	self.assertIs(date(),timezone.now())
+	
 	
 
 
@@ -47,9 +50,9 @@ class QuestionIndexViewTests(TestCase):
 		self.assertQuerysetEqual(
 			response.context['latest_question_list'],['<Question: Past question.>'])
 	def test_future_question(self):
-		create_question(question_text="Future question.",days=30)
+		future_question = create_question(question_text="Future question.",days=30)
 		response = self.client.get(reverse('polls:index'))
-		self.assertContains(response, "No polls are available.")
+		self.assertContains(response, "Future question")
 		self.assertQuerysetEqual(response.context['latest_question_list'],[])
 	def test_future_question_and_past_question(self):
 		create_question(question_text="Past question.", days=-30)

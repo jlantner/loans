@@ -1,0 +1,12 @@
+
+
+{% block title %}{{ title }} | Hank's Bank {% endblock %}
+
+{% block branding %}
+<h1 id="site-name"><a href="{% url 'polls:index' %}">Hank's Bank</a></h1>
+
+<h1> {{question.question_text}}</h1>
+{% endblock %}
+
+
+{% block nav-global %}{% endblock %}

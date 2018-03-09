@@ -12,10 +12,23 @@ class Question(models.Model):
 
 	def was_published_recently(self):
 		now = timezone.now()
+
 		return now - datetime.timedelta(days=1) <= self.pub_date <= now
 		was_published_recently.admin_order_field='pub_date'
 		was_published_recently.boolean=True
 		was_published_recently.short_description='Published recently?'
+	def date(self):
+		return timezone.now()
+	#def was_published_recently_yes_or_no(x):
+	#	x=was_published_recently(self)
+	#	if x==False:
+	#		return "No"
+	#	else:
+	#		return "Yes"
+	def past_or_now(self):
+		now=timezone.now()
+		return now >= self.pub_date
+
 	
 		
 	def __str__(self):
