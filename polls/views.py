@@ -20,7 +20,7 @@ class IndexView(generic.ListView):
 class DetailView(generic.DetailView):
     model = Question
     template_name = 'polls/detail.html'
-
+    
 
 class ResultsView(generic.DetailView):
     model = Question
@@ -41,9 +41,9 @@ def index(request):
     }
     return HttpResponse(template.render(context, request))
 
-def detail(request, question_id):
+def detail(request):
 	try:
-		question = Question.objects.get(pk=question_id)
+		question = get_object_or_404(Question, pk=question.id)
 	except Question.DoesNotExist:
 		raise Http404("Question does not exist")
 		return render(request, 'polls/detail.html', {'question': question})
@@ -55,8 +55,8 @@ def detail(request, question_id):
     #return render(request, 'polls/detail.html', {'question': question})
     #return HttpResponse("You're looking at question %s." % question_id)
 
-def results(request, question_id):
-	question = get_object_or_404(Question, pk=question_id)
+def results(request):
+	question = Question.objects.order_by('-pub_date')[:5]
 	return render(request, 'polls/results.html', {'question': question})
 	
 
