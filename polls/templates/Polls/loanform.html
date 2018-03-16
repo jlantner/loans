@@ -1,0 +1,64 @@
+
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
+
+
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="{% url 'polls:decision' %}" method="post">
+{% csrf_token %}
+
+
+
+	First Name:<br>
+	<input type="text" name="firstname"><br>
+	
+
+
+	Last Name:<br>
+	<input type="text" name="lastname"><br>
+	
+
+
+	Age:<br>
+	<input type="text" name="age"><br>
+	
+
+
+	Current High School:<br>
+	<input type="text" name="highschool"><br>
+	
+	<input type="submit" value="Test" />
+</form>
+    
+
+
+
+
+
+
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+
+
+
+
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<!--<form action="{% url 'polls:index'  %}" method="post">
+{% csrf_token %}
+{% for choice in question.choice_set.all %}
+    <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" />
+    <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br />
+{% endfor %}
+<input type="submit" value="Submit" />
+
+
+
+
+
+
+
