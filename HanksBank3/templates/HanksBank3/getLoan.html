@@ -1,0 +1,47 @@
+
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'HanksBank3/style.css' %}" />
+
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="{% url 'HanksBank3:decision'  %}" method="get">
+{% csrf_token %}
+
+
+
+	First Name:<br>
+	<input type="text" name="firstname"><br>
+	
+
+
+	Last Name:<br>
+	<input type="text" name="lastname"><br>
+	
+
+
+	Age:<br>
+	<input type="text" name="age"><br>
+	
+
+
+	Current High School:<br>
+	<input type="text" name="highschool"><br>
+
+	College1:<br>
+	<input type="text" name="college1"><br>
+
+	College2:<br>
+	<input type="text" name="college2"><br>
+
+	College3:<br>
+	<input type="text" name="college3"><br>
+
+	major:<br>
+	<input type="text" name="major"><br>
+
+	Salery:<br>
+	<input type="text" name="salery"><br>
+	
+	<input type="submit" value="Test" />
+</form>

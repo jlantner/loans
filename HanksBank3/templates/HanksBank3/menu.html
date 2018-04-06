@@ -1,0 +1,10 @@
+
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'HanksBank3/style.css' %}" />
+
+<h1> Do You Want a Loan? </h1>
+
+<li><a href="{% url 'HanksBank3:form' %}"> Yes </a></li>
+
+<li><a href="{% url 'HanksBank3:no' %}"> No </a></li>
+
