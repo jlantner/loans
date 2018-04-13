@@ -4,6 +4,7 @@ from django.urls import reverse
 from django.views import generic
 from django.utils import timezone
 import datetime 
+from django.http import HttpResponse
 
 from .models import Choice, Question
 
@@ -25,6 +26,7 @@ class DetailView(generic.DetailView):
 class ResultsView(generic.DetailView):
     model = Question
     template_name = 'polls/results.html'
+
 
 class LoanFormView(generic.ListView):
     model = Question
@@ -113,3 +115,29 @@ def vote(request, question_id):
         # with POST data. This prevents data from being posted twice if a
         # user hits the Back button.
         return HttpResponseRedirect(reverse('polls:results', args=(question.id,)))
+def getLoan(request):
+    fname = request.GET['fname']
+    lname = request.GET['lname']
+    highschool = request.GET['highschool']
+    age = request.GET['age']
+    info=(fname + " " + lname + "\n" + highschool + "\n" + age)
+    return HttpResponse(info)
+
+#def answer(request):
+ #   question = get_object_or_404(Question)
+  #  try:
+   #     selected_choice = question.choice_set.get(pk=request.POST['choice'])
+    #except (KeyError, Choice.DoesNotExist):
+        # Redisplay the question voting form.
+     #   return render(request, 'polls/loanform.html', {
+      #      'question': question,
+       #     'error_message': "You didn't select a choice.",
+        #})
+ ##   else:
+   #     selected_choice.answers += 1
+    #    selected_choice.save()
+        # Always return an HttpResponseRedirect after successfully dealing
+        # with POST data. This prevents data from being posted twice if a
+        # user hits the Back button.
+     #   return HttpResponseRedirect(reverse('polls:decision'))
+

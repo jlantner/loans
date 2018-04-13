@@ -5,8 +5,12 @@
 
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
-<form action="{% url 'HanksBank3:decision'  %}" method="get">
+<form action="{% url 'HanksBank3:decision'  %}" method="get" target="decision"> 
 {% csrf_token %}
+
+
+
+
 
 
 
@@ -42,6 +46,28 @@
 
 	Salery:<br>
 	<input type="text" name="salery"><br>
+
+	<input type="submit" value="test" />
 	
-	<input type="submit" value="Test" />
+	
+	<iframe src="decision" style="border:none;" name="decision"></iframe>
+
+	<!--<p><a href="" target="decision">Test</a></p>
+-->
+
+
+
+
+	
+	
+
+
+
+	
+
+
 </form>
+
+<li><a href="{% url 'HanksBank3:menu' %}">Quit</a></li>
+
+

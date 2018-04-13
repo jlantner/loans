@@ -9,6 +9,8 @@ urlpatterns = [
     path('<int:question_id>/vote/', views.vote, name='vote'),
     path('loanform/', views.LoanFormView.as_view(), name='loanform'),
     path('decision/', views.DecisionView.as_view(), name='decision'),
+    path('getLoan/', views.getLoan, name='getLoan'),
+  #  path('answer/', views.answer, name='answer'),
 ]
 
 #from django.urls import path

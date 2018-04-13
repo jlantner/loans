@@ -6,7 +6,7 @@
 
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
-<form action="{% url 'polls:decision' %}" method="post">
+<form action="{% url 'polls:decision'  %}" method="post">
 {% csrf_token %}
 
 
@@ -31,6 +31,8 @@
 	
 	<input type="submit" value="Test" />
 </form>
+<!--<a href="{% url 'polls:decision' %}">View Decision </a>
+}-->
     
 
 
