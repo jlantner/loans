@@ -5,7 +5,7 @@
 
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
-<form action="{% url 'HanksBank3:decision'  %}" method="get" target="decision"> 
+<form action="{% url 'HanksBank3:results'  %}" method="get" target="results"> 
 {% csrf_token %}
 
 
@@ -24,33 +24,87 @@
 	
 
 
-	Age:<br>
-	<input type="text" name="age"><br>
+	Age:<br> <input type="button" onclick="alert('You must be 18 or older to borrow')"  value="info">
+
+	
+
+	<input type="number" name="age" min="18" max="62"><br> 
 	
 
 
 	Current High School:<br>
-	<input type="text" name="highschool"><br>
+	<select name="highschool">
+		<option value=""></option>
+		<option value="Bronx Science">Bronx Science</option>
+		<option value="Nest">Nest</option>
+		<option value="Stivesent">Stivesent</option>
+		<option value="Lab">Lab</option>
+		<option value="Brooklen Tech">Brooklen Tech</option>
+		<option value="Other">Other</option>
+
+		</select><br>
+
+
 
 	College1:<br>
-	<input type="text" name="college1"><br>
+	<select name="college1">
+		<option value=""></option>
+		<option value="Harvord">Harvord</option>
+		<option value="Stanford">Stanford</option>
+		<option value="MIT">MIT</option>
+		<option value="Prinston">Prinston</option>
+		<option value="Columbia">Columbia</option>
+		<option value="Yale">Yale</option>
+		<option value="John Hopkins">John Hopkins</option>
+		<option value="Cornell">Cornell</option>
+		</select><br>
+
 
 	College2:<br>
-	<input type="text" name="college2"><br>
-
+	<select name="college2">
+		<option value=""></option>
+		<option value="Harvord">Harvord</option>
+		<option value="Stanford">Stanford</option>
+		<option value="MIT">MIT</option>
+		<option value="Prinston">Prinston</option>
+		<option value="Columbia">Columbia</option>
+		<option value="Yale">Yale</option>
+		<option value="John Hopkins">John Hopkins</option>
+		<option value="Cornell">Cornell</option>
+		</select><br>
 	College3:<br>
-	<input type="text" name="college3"><br>
+	<select name="college3">
+		<option value=""></option>
+		<option value="Harvord">Harvord</option>
+		<option value="Stanford">Stanford</option>
+		<option value="MIT">MIT</option>
+		<option value="Prinston">Prinston</option>
+		<option value="Columbia">Columbia</option>
+		<option value="Yale">Yale</option>
+		<option value="John Hopkins">John Hopkins</option>
+		<option value="Cornell">Cornell</option>
+		</select><br>
 
 	major:<br>
-	<input type="text" name="major"><br>
+	<select name="major">
+		<option value=""></option>
+		<option value="Engineering">Engineering</option>
+		<option value="Industrial Engineering">Industrial Engineering</option>
+		<option value="Biomedical Engineering">Biomedical Engineering</option>
+		<option value="Civil Engineering">Civil Engineering</option>
+		<option value="Computer Science">Computer Science</option>
+		<option value="Phisics">Phisics</option>
+		<option value="Chemistry">Chemistry</option>
+		<option value="Robotics">Robotics</option>
+		</select><br>
 
-	Salery:<br>
-	<input type="text" name="salery"><br>
+	Salery:<br> 200,000
+	<input type="range" name="salery" min="20000" max="1000000000"> 1,000,000,000<br>
 
 	<input type="submit" value="test" />
 	
 	
-	<iframe src="decision" style="border:none;" name="decision"></iframe>
+	<iframe src="results" style="border:none;" name="results"></iframe>
 
 	<!--<p><a href="" target="decision">Test</a></p>
 -->
