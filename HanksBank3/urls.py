@@ -1,3 +1,4 @@
+
 from django.urls import path
 from . import views
 
@@ -8,9 +9,11 @@ urlpatterns = [
     #path('time/', views.time, name='time'),
     #path('BMI/', views.BMI, name='BMI'),
     path('getLoan/', views.form, name='form'),
-    path('getLoan/results/', views.results, name='results'),
+    path('getLoan/decision/', views.decision, name='decision'),
     path("", views.menu, name='menu'),
     path('no/', views.no, name='no'),
 
 
 ]
+
+
