@@ -2,77 +2,80 @@
 
 
 
-#class applicant():
+class user():
 
-#	def __init__(self):
+	def __init__(self):
 
-#		self.firstname=""
-#		self.lastname=""
-#		self.age=0
-#		self.highschool=""
-#		self.college1=""
-#		self.college2=""
-#		self.college3=""
-#		self.major=""
-#		self.salary=0
+		self.firstname=""
+		self.lastname=""
+		self.age=0
+		self.highschool=""
+		self.college1=""
+		self.college2=""
+		self.college3=""
+		self.major=""
+		self.salery=0
+
+	def Hello_world(self):
+		return ("Hello World")
 	
 
 
-#	def get_firstname(self):
-#		return self.firstname
+	def get_fname(self):
+		return self.fname
 
 	
 
-#	def set_firstname(self,firstname):
-#		self.firstname=firstname
+	def set_fname(self,firstname):
+		self.fname=fname
 
-#	def get_lastname(self):
-#		return self.lastname
+	def get_lname(self):
+		return self.lname
 
-#	def set_lastname(self,lastname):
-#		self.lastname=lastname
+	def set_lname(self,lastname):
+		self.lname=lname
 
-#	def get_age(self):
-#		return self.age
+	def get_years(self):
+		return self.years
 
-#	def set_age(self,age):
-#		self.age=age
+	def set_years(self,years):
+		self.years=years
 	
-#	def get_highschool(self):
-#		return self.highschool
+	def get_school(self):
+		return self.school
 
-#	def set_highschool(self,highschool):
-#		self.highschool=highschool
+	def set_highschool(self,school):
+		self.school=school
 
-#	def get_college1(self):
-#		return self.college1
+	def get_choice1(self):
+		return self.choice1
 
-#	def set_college1(self,college1):
-#		self.college1=college1
+	def set_choice1(self,choice1):
+		self.choice1=choice1
 
-#	def get_college2(self):
-#		return self.college2
+	def get_choice2(self):
+		return self.choice2
 
-#	def set_college2(self,college2):
-#		self.college2=college2
+	def set_choice2(self,choice2):
+		self.choice2=choice2
 
-#	def get_college3(self):
-#		return self.college3
+	def get_choice3(self):
+		return self.choice3
 
-#	def set_college3(self,college3):
-#		self.college3=college3
+	def set_choice3(self,choice3):
+		self.choice3=choice3
 
-#	def get_major(self):
-#		return self.major
+	def get_subject(self):
+		return self.subject
 
-#	def set_major(self,major):
-#		self.major=major
+	def set_subject(self,subject):
+		self.subject=subject
 
-#	def get_salary(self):
-#		return self.salary
+	def get_money(self):
+		return self.money
 
-#	def set_salary(self,salary):
-#		self.salary=salary
+	def set_money(self,money):
+		self.money=money
 
 	
 

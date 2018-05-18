@@ -1,16 +1,15 @@
-from user import applicant
+import user 
 
-Jared=applicant()
-Jared.set_firstname("Jared")
-Jared.set_lastname("Lantner")
-Jared.set_age(18)
-Jared.set_highschool("Summit")
-Jared.set_college1("Harverd")
+from views import application
+from user import user 
+
+#print(user().Hello_world())\
+print (__name__)
 
 
-print(Jared.get_firstname())
-print(Jared.get_lastname())
-print(Jared.get_age())
-print(Jared.get_highschool())
-print(Jared.get_college1())
 
+def main():
+	Jared=user()
+	return (application(Jared,"Jared","Lantner",18,"Summit","RIT", "Stevens", "Drexel", "Engineering",200000000000))
+if __name__=='__main__':
+	print (main())

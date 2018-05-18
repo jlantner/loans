@@ -5,14 +5,14 @@
 
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
-<form action="{% url 'HanksBank3:decision'  %}" method="get" target="decision"> 
+<form action="{% url 'HanksBank3:application'  %}" method="get" target="decision"> 
 {% csrf_token %}
 
 
 
 
 
-
+	
 
 	First Name:<br>
 	<input type="text" name="firstname"><br>
@@ -104,7 +104,7 @@
 	<input type="submit" value="test" />
 	
 	
-	<iframe src="decision" style="border:none;" name="decision"></iframe>
+	<iframe src="application" style="border:none;" name="application"></iframe>
 
 	<!--<p><a href="" target="decision">Test</a></p>
 -->
