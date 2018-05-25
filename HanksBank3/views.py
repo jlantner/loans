@@ -5,6 +5,7 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.views import generic
 from django.utils import timezone
+from django.http import request 
 
 from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponseRedirect
@@ -34,26 +35,47 @@ def no(request):
 	return render(request, 'HanksBank3/no.html')
 
 def application(request):
-	firstname=request.GET["firstname"]
-	lastname=request.GET["lastname"]
-	age=request.GET["age"]
-	highschool=request.GET["highschool"]
-	college1=request.GET["college1"]
-	college2=request.GET["college2"]
-	college3=request.GET["college3"]
-	major=request.GET["major"]
-	salery=request.GET["salery"]
+	try:
 
-	u=user.user()
-	u.set_fname(firstname)
-	u.set_lname(lastname)
-	u.set_years(age)
-	u.set_school(highschool)
-	u.set_choice1(college1)
-	u.set_choice2(college2)
-	u.set_choice3(college3)
-	u.set_subject(major)
-	u.set_money(salery)
+		u=user.user()
+
+
+		firstname=u.get_firstname()
+		lastname=u.get_lastname()
+		age=u.get_age()
+		highschool=u.get_highschool()
+		college1=u.get_college1()
+		college2=u.get_college2()
+		college3=u.get_college3()	
+		major=u.get_major()
+		salery=u.get_salery() 
+
+		u.set_firstname(request.GET['firstname'])
+		u.set_lastname(request.GET['lastname'])
+		u.set_age(request.GET['age'])
+		u.set_highschool(request.GET['highschool'])
+		u.set_college1(request.GET['college1'])
+		u.set_college2(request.GET['college2'])
+		u.set_college3(request.GET['college3'])
+		u.set_major(request.GET['major'])
+		u.set_salery(request.GET['salery'])
+
+
+
+
+#	firstname=request.GET['firstname']
+#	lastname=request.GET['lastname']
+#	age=request.GET['age']
+#	highschool=request.GET['highschool']
+#	college1=request.GET['college1']
+#	college2=request.GET['college2']
+#	college3=request.GET['college3']
+#	major=request.GET['major']
+#	salery=request.GET['salery']
+
+
+	
+
 
 
 
@@ -63,8 +85,8 @@ def application(request):
 
 	
 		
-	try:	
-		if int(age)<18:
+		
+		if int(age)>18:
 			info=("You must be 18 or older to recieve a loan")
 		elif college1=="MIT" or college2=="MIT" or college3=="MIT":
 			info=("Loan Accepted")
@@ -92,7 +114,7 @@ def application(request):
 	
 
 	except:
-		info=("Error")
+		info=("")
 		return HttpResponse(info)
 
 	 #{'question': question})

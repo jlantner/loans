@@ -21,61 +21,61 @@ class user():
 	
 
 
-	def get_fname(self):
-		return self.fname
+	def get_firstname(self):
+		return self.firstname
 
 	
 
-	def set_fname(self,firstname):
-		self.fname=fname
+	def set_firstname(self,firstname):
+		self.lastname=firstname
 
-	def get_lname(self):
-		return self.lname
+	def get_lastname(self):
+		return self.lastname
 
-	def set_lname(self,lastname):
-		self.lname=lname
+	def set_lastname(self,lastname):
+		self.lastname=lastname
 
-	def get_years(self):
-		return self.years
+	def get_age(self):
+		return self.age
 
-	def set_years(self,years):
-		self.years=years
+	def set_age(self,age):
+		self.age=age
 	
-	def get_school(self):
-		return self.school
+	def get_highschool(self):
+		return self.highschool
 
-	def set_highschool(self,school):
-		self.school=school
+	def set_highschool(self,highschool):
+		self.highschool=highschool
 
-	def get_choice1(self):
-		return self.choice1
+	def get_college1(self):
+		return self.college1
 
-	def set_choice1(self,choice1):
-		self.choice1=choice1
+	def set_college1(self,college1):
+		self.college1=college1
 
-	def get_choice2(self):
-		return self.choice2
+	def get_college2(self):
+		return self.college2
 
-	def set_choice2(self,choice2):
-		self.choice2=choice2
+	def set_college2(self,college2):
+		self.college2=college2
 
-	def get_choice3(self):
-		return self.choice3
+	def get_college3(self):
+		return self.college3
 
-	def set_choice3(self,choice3):
-		self.choice3=choice3
+	def set_college3(self,college3):
+		self.college3=college3
 
-	def get_subject(self):
-		return self.subject
+	def get_major(self):
+		return self.major
 
-	def set_subject(self,subject):
-		self.subject=subject
+	def set_major(self,major):
+		self.major=major
 
-	def get_money(self):
-		return self.money
+	def get_salery(self):
+		return self.salery
 
-	def set_money(self,money):
-		self.money=money
+	def set_salery(self,salery):
+		self.salery=salery
 
 	
 
